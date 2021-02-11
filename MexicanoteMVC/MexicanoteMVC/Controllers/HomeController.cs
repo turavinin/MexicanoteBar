@@ -33,7 +33,6 @@ namespace MexicanoteMVC.Controllers
         }
 
 
-
         public IActionResult Search()
         {
             return View();
