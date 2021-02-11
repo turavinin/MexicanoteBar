@@ -1,0 +1,23 @@
+﻿
+@model DataLibrary.Models.PedidoModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@if (Model is null)
+{
+    <div class="alert alert-warning text-center" role="alert">No se encontró el pedido</div>
+}
+else
+{
+    <div class="d-block mt-lg-5 text-center mx-auto">
+        <div class="alert alert-danger text-center" role="alert">¿Estas seguro de eliminar el pedido?</div>
+        <form asp-action="Delete">
+            <input type="submit" value="Delete" class="btn btn-danger w-50">
+        </form>
+    </div>
+}
+
+
+

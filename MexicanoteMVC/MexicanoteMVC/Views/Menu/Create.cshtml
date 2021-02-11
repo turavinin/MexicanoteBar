@@ -1,0 +1,51 @@
+﻿@model MexicanoteMVC.Models.CrearPedidoModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center text-white" id="pedido-titulo">Hace tu pedido!</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4 mx-auto text-white">
+        <form asp-action="Create" id="pedido-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Pedido.NombreCliente" class="control-label">Nombre</label>
+                <input asp-for="Pedido.NombreCliente" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Pedido.EmailCliente" class="control-label">Correo Electronico</label>
+                <input asp-for="Pedido.EmailCliente" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Pedido.DireccionCliente" class="control-label">Direccion</label>
+                <input asp-for="Pedido.DireccionCliente" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Pedido.MenuId" class="control-label">Plato</label>
+                <select asp-for="Pedido.MenuId" asp-items="Model.ItemsMenu" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Pedido.CantidadTotal" class="control-label">Cantidad</label>
+                <input asp-for="Pedido.CantidadTotal" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Pedir" class="btn btn-primary" id="btn-pedir"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

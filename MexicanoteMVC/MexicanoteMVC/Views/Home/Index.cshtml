@@ -1,0 +1,17 @@
+﻿@model IEnumerable<DataLibrary.Models.MenuModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var item in Model)
+{
+<div class="card mt-3 mb-5 mx-auto border-0">
+    <div class="card-header bg-negro font-color-white">@Html.DisplayFor(modelItem => item.NombrePlato)</div>
+    <div class="card-body">
+        <h5>@Html.DisplayFor(modelItem => item.DescripcionPlato)</h5>
+        <p>$ @Html.DisplayFor(modelItem => item.PrecioPlato)</p>
+        <a asp-area="" asp-controller="Menu" asp-action="Create" class="btn btn-primary bg-negro mx-auto font-family-primary border-dark">¡Pedilo!</a>
+    </div>
+</div>
+}
